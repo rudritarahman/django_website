@@ -51,8 +51,8 @@ Welcome to the **Sneakers Ecommerce Website** project! This is a fully functiona
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/sneakers-ecommerce.git
-   cd sneakers-ecommerce
+   git clone https://github.com/rudritarahman/django_website.git
+   cd django_website
    ```
 
 2. **Set Up a Virtual Environment:**
