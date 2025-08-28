@@ -3,6 +3,7 @@ import random
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate as auth_authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
@@ -19,19 +20,34 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        next_url = request.POST.get('next', 'home')
 
-        if username and password:
-            user = auth_authenticate(username=username, password=password)
-            if user:
-                auth_login(request, user)
-                return redirect('home')
-            else:
-                messages.error(request, 'User credentials does not match.')
-                return redirect('login')
-
+        user = auth_authenticate(username=username, password=password)
+        if user:
+            auth_login(request, user)
+            return redirect(next_url)
+        else:
+            messages.error(request, 'User credentials do not match.')
+            return redirect('login')
+    else:
+        # If redirected here because of login_required, show info message
+        if 'next' in request.GET:
+            messages.info(request, "Please log in to access this page.")
     return render(request, 'login.html')
+    
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
 
 
+@login_required
+def order_history(request):
+    orders = Order.objects.filter(user=request.user)
+    return render(request, 'orders.html', {'orders': orders})
+
+
+@login_required
 def user_logout(request):
     auth_logout(request)
     return redirect('home')

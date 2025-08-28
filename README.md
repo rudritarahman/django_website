@@ -18,6 +18,7 @@ Welcome to the **Sneakers Ecommerce Website** project! This is a fully functiona
 ## Features
 
 ### User Features
+
 - Browse a catalog of sneakers with images, descriptions, and prices.
 - User registration and login system.
 - Add sneakers to a shopping cart and proceed to checkout.
@@ -25,6 +26,7 @@ Welcome to the **Sneakers Ecommerce Website** project! This is a fully functiona
 - View order history and order status.
 
 ### Admin Features
+
 - Admin dashboard to manage products, categories, and orders.
 - Add, edit, or remove products from the catalog.
 - Track and update order statuses.
@@ -43,6 +45,7 @@ Welcome to the **Sneakers Ecommerce Website** project! This is a fully functiona
 ## Installation
 
 ### Prerequisites
+
 1. Python 3.8+
 2. Virtual environment tool (venv or virtualenv).
 3. SSLCOMMERZ Sandbox Payment System Registration.
@@ -50,34 +53,40 @@ Welcome to the **Sneakers Ecommerce Website** project! This is a fully functiona
 ### Steps
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/rudritarahman/django_website.git
    cd django_website
    ```
 
 2. **Set Up a Virtual Environment:**
+
    ```bash
    python -m venv env
    source env/bin/activate  # On Windows: env\Scripts\activate
    ```
 
 3. **Install Dependencies:**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Set Up the Database:**
+
    ```bash
    python manage.py makemigrations
    python manage.py migrate
    ```
 
 5. **Create a Superuser:**
+
    ```bash
    python manage.py createsuperuser
    ```
 
 6. **Run the Development Server:**
+
    ```bash
    python manage.py runserver
    ```
@@ -90,6 +99,7 @@ Welcome to the **Sneakers Ecommerce Website** project! This is a fully functiona
 ## Usage
 
 ### Development
+
 1. Run the Django server locally:
    ```bash
    python manage.py runserver
@@ -98,7 +108,9 @@ Welcome to the **Sneakers Ecommerce Website** project! This is a fully functiona
 3. Use the Django admin panel for quick management of data: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin).
 
 ### Deployment
+
 This project includes Docker support for deployment. Follow these steps:
+
 1. Build and run Docker containers:
    ```bash
    docker-compose up --build
@@ -108,11 +120,13 @@ This project includes Docker support for deployment. Follow these steps:
 ---
 
 ## Project Structure
+
 _Note:_ _Will be updated soon._
 
 ---
 
 ## Project status
+
 - [ ] This is a complete project.
 - [x] This project is on hold.
 - [ ] This is an incomplete project.
